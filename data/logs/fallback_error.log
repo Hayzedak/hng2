@@ -1,0 +1,8 @@
+2024/07/06 16:17:06 [warn] 177#177: 512 worker_connections are not enough, reusing connections
+2024/07/06 16:17:06 [alert] 177#177: 512 worker_connections are not enough
+2024/07/06 16:17:06 [error] 177#177: *512 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: localhost-nginx-proxy-manager, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:80/favicon.ico", host: "54.81.61.166", referrer: "http://54.81.61.166/"
+2024/07/06 16:41:32 [warn] 177#177: 512 worker_connections are not enough, reusing connections
+2024/07/06 16:41:32 [alert] 177#177: 512 worker_connections are not enough
+2024/07/06 16:41:32 [error] 177#177: *1017 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 127.0.0.1, server: localhost-nginx-proxy-manager, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:80/favicon.ico", host: "54.81.61.166", referrer: "http://54.81.61.166/"
+2024/07/06 16:41:53 [error] 177#177: *514 open() "/var/www/html/api" failed (2: No such file or directory), client: 197.210.54.199, server: localhost-nginx-proxy-manager, request: "GET /api HTTP/1.1", host: "54.81.61.166"
+2024/07/06 16:43:14 [error] 177#177: *514 open() "/var/www/html/redoc" failed (2: No such file or directory), client: 197.210.54.199, server: localhost-nginx-proxy-manager, request: "GET /redoc HTTP/1.1", host: "54.81.61.166"
