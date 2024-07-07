@@ -1,23 +1,18 @@
-# Backend Dockerfile
-
 # Use the official Python image from the Docker Hub
-FROM python:3.10-slim AS base
+FROM python:3.10-slim as build
 
 # Set the working directory
 WORKDIR /app
 
-# Install Poetry
-RUN pip install poetry
+# Install Poetry and dependencies
+COPY pyproject.toml poetry.lock ./
+RUN pip install poetry \
+    && poetry config virtualenvs.create false \
+    && poetry install --no-dev
 
-# Copy only the requirements to cache them in docker layer
-COPY poetry.lock pyproject.toml /app/
+# Copy the rest of the application code
+COPY . .
 
-# Install dependencies
-RUN poetry config virtualenvs.create false && poetry install --no-dev
-
-# Copy the rest of the application
-COPY . /app
-
-# Run the application
+# Command to run the application
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 

@@ -1,30 +1,28 @@
-# Use the official Node.js image as the base image for building
+# Frontend Dockerfile
 FROM node:16 AS build
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy the package.json and package-lock.json to the working directory
-COPY package*.json ./
-
 # Install dependencies
+COPY package*.json ./
 RUN npm install
 
-# Copy the rest of the application code to the working directory
+# Copy application files
 COPY . .
 
-# Build the application
+# Build the frontend application
 RUN npm run build
 
-# Use the official Nginx image for serving the frontend
-FROM nginx:alpine
+# Production stage
+FROM nginx:latest
 
-# Copy the build output to the Nginx HTML directory
+# Copy built files to nginx
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port 80
+# Expose port
 EXPOSE 80
 
-# Start Nginx
+# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
 
