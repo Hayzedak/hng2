@@ -1,28 +1,28 @@
-# Frontend Dockerfile
-FROM node:16 AS build
+# Use an official Node.js runtime as a parent image
+FROM node:20.15.0-alpine
 
-# Set working directory
+# Set the working directory in the container
 WORKDIR /app
 
+# Copy the package.json and package-lock.json files
+#COPY package*.json ./
+
 # Install dependencies
-COPY package*.json ./
+#RUN npm install
+
+# Copy the rest of the application code
+COPY . /app
 RUN npm install
+# Build the Vite app
+#RUN npm run build
 
-# Copy application files
-COPY . .
+# Check if the build directory exists
+#RUN ls -al /app/dist
 
-# Build the frontend application
-RUN npm run build
 
-# Production stage
-FROM nginx:latest
+# Make port 80 available to the world outside this container
+EXPOSE 5173
 
-# Copy built files to nginx
-COPY --from=build /app/dist /usr/share/nginx/html
-
-# Expose port
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
-
+# Serve the application
+#CMD ["serve", "-s", "dist"]
+CMD [ "npm", "run", "dev", "--", "--host" ]
