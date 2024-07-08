@@ -1,4 +1,4 @@
-# Use an official Python runtime as a parent image
+# Official Python runtime as a parent image
 FROM python:3.10
 
 RUN set -xe
@@ -8,8 +8,8 @@ RUN curl -sSL https://install.python-poetry.org | python3 - --git https://github
 
 ENV PATH="/root/.local/bin:$PATH"
 
+# Confirm poetry version
 RUN poetry --version
-# RUN poetry new foobar
 
 # Set up the working directory
 WORKDIR /app
