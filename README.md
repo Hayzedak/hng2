@@ -13,7 +13,7 @@ The repository is organized into two main directories:
 
 1. Using ubuntu on your local machine
 
- - [-] update packages: `sudo apt update`
+ - update packages: `sudo apt update`
  - [-] install git: `sudo apt install git`
  - [-] clone the project repository: `git clone https://github.com/Hayzedak/hng2.git`
 
