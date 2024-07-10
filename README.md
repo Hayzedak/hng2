@@ -11,17 +11,19 @@ The repository is organized into two main directories:
 
 ## Manual deployment 
 
-1. Using ubuntu on your local machine
+**1. Using ubuntu on your local machine**
 
  - update packages: `sudo apt update`
  - install git: `sudo apt install git`
  - clone the project repository: `git clone https://github.com/Hayzedak/hng2.git`
 
-2. Install prerequisites
+**2. Install prerequisites**
 
 - install poetry: `curl -sSL https://install.python-poetry.org | python3 -`. 
+
 Add poetry to path using `nano ~/.bashrc` and  `export PATH="$HOME/.local/bin:$PATH"
 `
+
 Save the file and reload the shell cofiguration file `source ~/.bashrc
 `
 
@@ -30,26 +32,31 @@ Save the file and reload the shell cofiguration file `source ~/.bashrc
 - install Node.js and npm: `sudo apt update` `sudo apt install nodejs npm
 `
 
-3. setting up backend
+**3. setting up backend**
 
 - navigate to the backend directory: `cd backend`
 - install dependencies using Poetry: `poetry install`
 - set up database tables: `poetry run bash ./prestart.sh`
 - run the backend server: `poetry run uvicorn app.main:app --reload`
 
-4. setting up frontend
+**4. setting up frontend**
 
 - navigate to the frontend diretory: `cd frontend`
 - Install dependencies: `npm install`
 - run the frontend development server: `npm run dev`
-- if you are using your ubuntu on wsl or vagrant, add your ubuntu ip address to your to locall machine to serve as local host e.g *172.30.226.117    localhost*.
+- if you are using your ubuntu on wsl or vagrant, add your ubuntu ip address to your to local machine to serve as local host e.g *172.30.226.117    localhost*.
 
 5. test by going to your browser:
 `localhost` => Frontend
+
 `localhost/api` => Backend 
+
 `localhost/docs` => Backend Docs
+
 `localhost/redoc` => Backend Redoc
+
 `localhost: 8080` => Adminer
+
 `localhost: 8090` => Proxy Manger GUI
 
 
