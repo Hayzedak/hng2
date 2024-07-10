@@ -21,10 +21,10 @@ The repository is organized into two main directories:
 
 - install poetry: `curl -sSL https://install.python-poetry.org | python3 -`. 
 
-Add poetry to path using `nano ~/.bashrc` and  `export PATH="$HOME/.local/bin:$PATH"
+  Add poetry to path using `nano ~/.bashrc` and  `export PATH="$HOME/.local/bin:$PATH"
 `
 
-Save the file and reload the shell cofiguration file `source ~/.bashrc
+  Save the file and reload the shell cofiguration file `source ~/.bashrc
 `
 
 - install postgreSQL: `sudo apt install postgresql`. Create PostgreSQL user and database using the information in the *./backend/.env* file.
