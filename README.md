@@ -177,22 +177,3 @@ Also, enable SSL certificate using Let's Encrypt and enable Force SSL.
 
 
 
-
-
-
-
-
-
-
-
-
-
-Each directory has its own README file with detailed instructions specific to that part of the application.
-
-## Getting Started
-
-To get started with this template, please follow the instructions in the respective directories:
-
-- [Frontend README](./frontend/README.md)
-- [Backend README](./backend/README.md)
-

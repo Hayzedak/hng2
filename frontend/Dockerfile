@@ -9,7 +9,7 @@ COPY . /app
 RUN npm install
 
 
-# Make port 80 available to the world outside this container
+# Make port 5173 available to the world outside this container
 EXPOSE 5173
 
 CMD [ "npm", "run", "dev", "--", "--host" ]
