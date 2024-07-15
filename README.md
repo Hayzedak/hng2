@@ -44,7 +44,8 @@ The repository is organized into two main directories:
 - navigate to the frontend diretory: `cd frontend`
 - Install dependencies: `npm install`
 - run the frontend development server: `npm run dev`
-- if you are using your ubuntu on wsl or vagrant, add your ubuntu ip address to your to local machine host file to serve as local host e.g *172.30.226.117    localhost*.
+- edit your *.env* file by adding your machine ip address for both backend and front end if you are using your ubuntu on wsl or vagrant e.g VITE_API_URL=http://<your_ip>:8000
+also BACKEND_CORS_ORIGINS=http://<your_ip>:5173
 
 **5. test by going to your browser:**
 
